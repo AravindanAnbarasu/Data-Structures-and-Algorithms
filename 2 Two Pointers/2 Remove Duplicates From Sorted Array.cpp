@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Two Pointers (Slow and Fast Pointers)
+/* Approach: Two Pointers (Slow and Fast Pointers)/(Sliding Window), as i and j(window)
+slides in every loop.
 */
 
 class Solution {

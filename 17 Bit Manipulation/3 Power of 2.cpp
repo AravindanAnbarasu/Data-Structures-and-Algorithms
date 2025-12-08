@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach Recursion: 
+/* Approach: Recursion
 Time Complexity : O(log n)                          
 Space Complexity: O(log n)  -> recursion depth 
 */

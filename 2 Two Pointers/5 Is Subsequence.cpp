@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Two Left Pointers
+/* Approach: Two Left Pointers on different containers
 */
 
 class Solution {

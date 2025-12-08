@@ -25,6 +25,7 @@ public:
     }
 };
 
+// When the input is Character Array rather than String
 class Solution {
 public:
     void reverseString(vector<char>& s) {

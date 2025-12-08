@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Three Right Pointers or Sorting
+/* Approach: Three Right Pointers
 */
 
 class Solution {
