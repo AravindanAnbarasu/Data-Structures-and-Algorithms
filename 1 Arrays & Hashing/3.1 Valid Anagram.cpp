@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Approach: Frequency Count Vector
+*/
+
 class Solution {
 public:
     bool isAnagram(string s, string t) {
@@ -11,21 +14,21 @@ public:
 
         // Here we assume only lowercase 'a' to 'z' as inputs, so size = 26 and Intialize all to Zero
         // a -> Index[0], b -> Index[1], .....
-        vector<int> charCountVec(26, 0);
+        vector<int> freqCountVec(26, 0);
 
         // (char - 'a'), gives the index of lowercase alphabets
         for (char c : s) // increase count for s
         {
-            charCountVec[c-'a'] = charCountVec[c-'a'] + 1;  
+            freqCountVec[c-'a'] = freqCountVec[c-'a'] + 1;  
         }
 
         for (char c : t) // decrease count for t
         {
-            charCountVec[c-'a'] = charCountVec[c-'a'] - 1;  
+            freqCountVec[c-'a'] = freqCountVec[c-'a'] - 1;  
         }
 
         // Check if all zero — means equal counts
-        for (int count : charCountVec) {
+        for (int count : freqCountVec) {
             if (count != 0) 
                 return false;
         }
@@ -52,20 +55,20 @@ public:
 
     4. For supporting both Upper & Lower Case, 
         --------------------------------------------------------------------------
-        vector<int> charCount(52, 0); // 52 slots: [0-25] for A-Z, [26-51] for a-z
+        vector<int> freqCountVec(52, 0); // 52 slots: [0-25] for A-Z, [26-51] for a-z
 
         for (char c : s) {
             if (c >= 'A' && c <= 'Z') 
-                charCount[c - 'A']++;
+                freqCountVec[c - 'A']++;
             else if (c >= 'a' && c <= 'z') 
-                charCount[26 + (c - 'a')]++;   // add +26 for lower case
+                freqCountVec[26 + (c - 'a')]++;   // add +26 for lower case
         }
 
         for (char c : t) {
             if (c >= 'A' && c <= 'Z') 
-                charCount[c - 'A']--;
+                freqCountVec[c - 'A']--;
             else if (c >= 'a' && c <= 'z') 
-                charCount[26 + (c - 'a')]--;   // add +26 for lower case
+                freqCountVec[26 + (c - 'a')]--;   // add +26 for lower case
         -------------------------------------------------------------------
         }
     
@@ -76,12 +79,12 @@ public:
         vector<int> freqVec(256, 0); // use 256 for entire ASCII range
         for (unsigned char c : s)    // use 'unsigned char'
         {
-            charCountVec[c-'a'] = charCountVec[c-'a'] + 1;  
+            freqCountVec[c-'a'] = freqCountVec[c-'a'] + 1;  
         }
 
         for (unsigned char c : t)   // use 'unsigned char'
         {
-            charCountVec[c-'a'] = charCountVec[c-'a'] - 1;  
+            freqCountVec[c-'a'] = freqCountVec[c-'a'] - 1;  
         }
         ------------------------------------------------------
 */

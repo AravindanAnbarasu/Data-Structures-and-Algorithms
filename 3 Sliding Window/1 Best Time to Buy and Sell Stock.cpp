@@ -18,7 +18,7 @@ public:
         int max_profit = 0;
 
         // The window slides until the fast pointer reaches the end of the price list.
-        while (j <= prices.size() - 1) // since index starts from 0
+        while (j < prices.size()) 
         {
             if (prices[i] < prices[j]) // check if selling price is > buying price
             {

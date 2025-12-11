@@ -22,8 +22,8 @@ public:
         // 1st element is always unique as its a sorted aray
         int count = 1;
         
-        for (; j < nums.size(); j++) {
-
+        while (j < nums.size()) 
+        {
             // If a new unique element is found while scanning
             if (nums[j] != nums[i]) 
             {
@@ -31,6 +31,9 @@ public:
                 i++;                 // Move slow pointer to next position
                 nums[i] = nums[j];   // Place the unique element there
             }
+            
+            // Always move the fast pointer forward untill the array is fully scaned
+            j++;
         }
 
         return count;
