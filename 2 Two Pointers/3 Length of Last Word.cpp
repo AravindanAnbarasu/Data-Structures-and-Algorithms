@@ -33,7 +33,7 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    1. When you start a pointer from right in array or string, always (size - 1), because the
+    When you start a pointer from right in array or string, always (size - 1), because the
     Index starts from 0
 */
 

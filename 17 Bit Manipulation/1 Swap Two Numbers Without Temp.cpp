@@ -1,13 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Approach: Bit Manipulation
+*/
+
 class Solution {
 public:
 
     void swapNumbers(int &a, int &b) {
         
-        // XOR Swap (No temporary variable)
-        // mugUP
+        // XOR Swap (No temporary variable) - mugUP
         
         a = a ^ b;
         b = a ^ b;

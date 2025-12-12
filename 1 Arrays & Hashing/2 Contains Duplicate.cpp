@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Approach: Hash Set 
+*/
+
 class Solution {
 public:    
     bool containsDuplicate(vector<int>& nums) {

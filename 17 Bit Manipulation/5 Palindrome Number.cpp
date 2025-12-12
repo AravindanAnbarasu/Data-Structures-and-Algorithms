@@ -20,6 +20,8 @@ public:
 };
 
 /* Optimal Approach: Bit Manipulation
+Time Complexity: O(n)
+Space Complexity: O(1)
 */
 
 class Solution {
@@ -55,7 +57,9 @@ public:
  * Space Complexity: O(1)                          *
  ***************************************************/
 
-/* Remarks: 
+/* Remarks:
+    An integer is a palindrome when it reads the same forward and backward
+    For example, 121 is a palindrome while 123 is not
     
 */
 

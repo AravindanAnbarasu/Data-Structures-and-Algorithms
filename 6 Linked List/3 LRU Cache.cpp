@@ -5,11 +5,11 @@ using namespace std;
 */
 
 /* We use:
-1️⃣ Doubly Linked List -> used to achieve LRU cache
+1️) Doubly Linked List -> used to achieve LRU cache
  - Stores elements in most-recently-used → least-recently-used order
  - Fast remove & insert (O(1))
 
-2️⃣ Hash Map -> used to achieve O(1) in finding and updating/retrieving the element
+2️) Hash Map -> used to achieve O(1) in finding and updating/retrieving the element
  - Stores keys → iterator to Node in doubly linked list
  - Fast lookup (O(1)) */
 

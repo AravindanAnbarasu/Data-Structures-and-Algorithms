@@ -1,15 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Approach: Use length-# prefix encoding
+For each string, store its length followed by a delimiter (e.g., #) and then the string itself.
+This is to handle cases where strings may contain special characters like # or numbers
+Example: ["hello","worl$d"] -> "5#hello6#worl$d"
+*/
+
 class Solution {
 public:
-
-    /*
-    Approach: Use length-# prefix encoding
-    For each string, store its length followed by a delimiter (e.g., #) and then the string itself.
-    This is to handle cases where strings may contain special characters like # or numbers
-    Example: ["hello","worl$d"] -> "5#hello6#worl$d"
-    */
 
     // Encodes a list of strings to a single string
     string encode(vector<string>& strs)

@@ -52,7 +52,10 @@ public:
     }
 };
 
-
+/* Approach: sorting
+Time Complexity : O(n log n)                          
+Space Complexity: O(log n)
+*/
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
