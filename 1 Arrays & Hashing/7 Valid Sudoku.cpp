@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Approach: 
+*/
+
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
