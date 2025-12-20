@@ -54,7 +54,8 @@ public:
 
             /*----------------Additional checks from usual palindrome logic----------------*/
 
-            if (tolower(s[left]) != tolower(s[right])) {
+            if (tolower(s[left]) != tolower(s[right])) 
+            {
                 return false;
             }
 
