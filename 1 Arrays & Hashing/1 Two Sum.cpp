@@ -8,17 +8,13 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         
-        // Base_Case: If input vector is empty, no solution found
-        if (nums.size() == 0)
-            return {};
-
         unordered_map<int,int> hash;
 
         for(int i = 0; i< nums.size() ; i++)
         {
             int answer = target - nums[i];
 
-            if(hash.find(answer) != hash.end()) // found the element in hash table ?
+            if(hash.find(answer) != hash.end()) // if found the element in hash table
             {
                 return {hash[answer],i}; 
             }

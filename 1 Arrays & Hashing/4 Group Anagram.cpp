@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: 
+/* Approach: Frequency Count Vector
 */
 
 class Solution {
@@ -53,8 +53,8 @@ public:
 
 /* Remarks: 
 
-    1. An anagram is a string that contains the exact same characters with 
-    same count as another string, but the order of the characters can be different 
+    1. An anagram is a string that contains the exact (same characters with same count)
+    as another string, but the (order of the characters can be different) 
 
     2. VECTOR Thumb Rule: whenever you declare a VECTOR, always initialize with (size, default value)
     or (size) like an array, when you access vec[] first even before push_back. 

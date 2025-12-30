@@ -1,20 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Hash Set 
+/* Approach: Hash Set
+   Hash Set -> stores only single element not pair, and that too only unique elements
 */
 
 class Solution {
 public:    
     bool containsDuplicate(vector<int>& nums) {
 
-        // "Hash_Set" stores unique values only
         unordered_set<int> hash;
 
         for (int num : nums) {
             
             // If item found in hash set, it exists twice
-            if (hash.find(num) != hash.end()) {
+            if (hash.find(num) != hash.end()) 
+            {
                 return true;
             }
 
@@ -33,7 +34,8 @@ public:
  ***************************************************/
 
 /* Remarks: 
-   Each Find, Insert and Delete in the Hash table costs only O(1) time
+   - Each Find, Insert and Delete in the Hash table costs only O(1) time
+   - hash set only has insert function to add elements, it cannot use [ ] to add or access elements
 */
 
 /* Question:

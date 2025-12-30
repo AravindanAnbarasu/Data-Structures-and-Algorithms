@@ -9,7 +9,7 @@ public:
     bool isAnagram(string s, string t) {
 
         // Base_case: If lengths differ, not possible to be anagrams
-        if (s.length() != t.length())
+        if (s.length() != t.length()) // In c++, s.size() is same as s.length() 
             return false;
 
         unordered_map<char, int> hash;
@@ -22,7 +22,7 @@ public:
             hash[c] = hash[c] - 1;  // decrement for each char found in t
         }
 
-        // Check if any character count is not zero → not an anagram
+        // Loop the hash, here element is a pair<char,int>
         for (auto element : hash) {
             if (element.second != 0)
                 return false;
@@ -34,15 +34,15 @@ public:
 
 /***************************************************************************
  * Time Complexity : O(n + m), where n and m are lengths of string s and t *                                              *
- * Space Complexity: O(1), since we have max 26 different characters   *
+ * Space Complexity: O(1), since we have max 26 different characters       *
  ***************************************************************************/
 
 /* Remarks: 
 
-    1. An anagram is a string that contains the exact same characters with 
-    same count as another string, but the order of the characters can be different 
+    1. An anagram is a string that contains the exact (same characters with same count)
+    as another string, but the (order of the characters can be different) 
     
-    2. hash[c] : You can just insert a key without a value, but the default value 
+    2. hash[c] + 1 : You can just insert a key without a value, but the default value 
     of the datatype will be stored. In our case 0, since int
     
     3. Works for entire ASCII Range of 256 characters, because signed char stores 1 byte , and we dont care signed

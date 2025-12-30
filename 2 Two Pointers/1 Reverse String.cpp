@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Two Pointers (Left and Right Pointers)
+/* Approach: Two Pointers (Left(0) and Right(size-1) Pointers)
 */
 
 class Solution {
@@ -10,7 +10,7 @@ public:
     void reverseString(string &s) {
 
         int left = 0;
-        int right = s.length() - 1;   // s.length() - 1 , because the index starts from 0
+        int right = s.size() - 1;   // s.length() - 1 , because the index starts from 0
 
         // Swap characters manually untill left == right, i.e -> left < right
         while (left < right) 
@@ -25,27 +25,8 @@ public:
     }
 };
 
-// When the input is Character Array rather than String
-class Solution {
-public:
-    void reverseString(vector<char>& s) {
-        
-        int left = 0;
-        int right = s.size() - 1;   // s.size() - 1 , because the index starts from 0
-
-        // Swap characters manually untill left == right, i.e -> left < right
-        while (left < right) 
-        {
-            char temp = s[left];
-            s[left] = s[right];
-            s[right] = temp;
-
-            left++;   // Increment the left pointer
-            right--;  // Devrement the right pointer
-        }
-        
-    }
-};
+// When the input is Character Array rather than String, same solution
+void reverseString(vector<char>& s) 
 
 /***************************************************
  * Time Complexity : O(n)                          *
