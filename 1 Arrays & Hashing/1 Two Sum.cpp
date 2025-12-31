@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Hash Map 
+/* Approach: Hash Map with index
 */
 
 class Solution {

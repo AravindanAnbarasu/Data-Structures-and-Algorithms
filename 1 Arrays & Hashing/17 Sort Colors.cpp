@@ -13,10 +13,10 @@ class Solution {
 public:
     void sortColors(vector<int>& nums)
     {
-        // Initialize the freqCountVec of size 3 (red (0), white(1) and blue(2) colours)
+        // Initialize the freqCountVec of size 3 (0, 1 , 2)
         vector<int> freqCountVec(3,0);
 
-        // Iterate the entire input array and capture the frequency count for each colour
+        // Iterate the entire input array and capture the frequency count for each number
         for (auto num : nums)
         {
             freqCountVec[num] = freqCountVec[num] + 1;
@@ -24,13 +24,13 @@ public:
 
         int index = 0;
 
-        // Loop through the freqCountVec, and fill the nums vector as per the frequency count value for each color value
+        // Loop through the freqCountVec, and fill the nums vector
         for (int i = 0; i < freqCountVec.size(); i++)
         {
             while (freqCountVec[i] > 0)
             {
                 nums[index] = i;
-                index = index + 1;
+                index++ ;
 
                 freqCountVec[i] = freqCountVec[i] - 1; // reduce the frequency count for each fill in nums array
             }
@@ -39,7 +39,7 @@ public:
 };
 
 /* Twisted Version: works for any colour value -> (red (5), White(12) and blue(2) colours)
-   Use mapping technique -> What every different colour values you get, map it to 0,1,2,3.....
+   Use Hash mapping technique -> What every different colour values you get, map it to 0,1,2,3.....
 */
 
 class Solution {
@@ -52,25 +52,23 @@ public:
         hash[12] = 1;
         hash[8] = 2;
 
-        vector<int> original = {5, 12, 8};
-
         // Convert original values to 0,1,2 in nums array
         for (int i=0; i<nums.size(); i++)
         {
             nums[i] = hash[nums[i]];
         }
-
+      
         // Now your frequency counting sort logic for {0,1,2}
         vector<int> freqCountVec(3);
 
         for (auto num : nums)
         {
-            freqCountVec[num] = freqCountVec[num] + 1; // Increment the counter corresponding to the color value found
+            freqCountVec[num] = freqCountVec[num] + 1; 
         }
 
         int index = 0;
 
-        // Loop through the freqCountVec, and fill the nums vector as per the frequency count value for each color value
+        // Loop through the freqCountVec, and fill the nums vector
         for (int i = 0; i < freqCountVec.size(); i++)
         {
             while (freqCountVec[i] > 0)
@@ -82,7 +80,9 @@ public:
             }
         }
 
-        // Convert back numbers back to 5,12,8
+        // Convert back numbers back to original
+        vector<int> original = {5, 12, 8};
+
         for (int i=0; i<nums.size(); i++)
         {
             nums[i] = original[nums[i]];

@@ -1,55 +1,67 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Frequency Count Vector
+/* Approach: Hash map + Frequency Count Vector
 */
 
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
 
-        // Hash map: Key - charCount string, Value - anagram vector
+        // Hash map: Key - custom count-string, Value - anagram vector
         unordered_map<string, vector<string>> hash;
 
-        // For each string create a charCount string Key and store it in hash
+        // Step_1: For each string create a custom count-string and store it in hash
         for (string s : strs) {
 
             // Here we assume only lowercase 'a' to 'z' as inputs, so size = 26 and Intialize all to Zero
             // a -> Index[0], b -> Index[1], .....
-            vector<int> charCountVec(26, 0);
+            vector<int> freqCountVec(26, 0);
 
             // count the characters in each string
             for (char c : s) 
             {
                 // (char - 'a'), gives the index of lowercase alphabets
-                charCountVec[c-'a'] = charCountVec[c-'a'] + 1;  
+                freqCountVec[c-'a'] = freqCountVec[c-'a'] + 1;  
             }
 
-            // Build charCount string Key using charCountVec. Eg: key output for: "abb" is "1#2#0#0#.."
+            // Build custom count-string Key using freqCountVec. Eg: key output for: "abb" is "1#2#0#0#.."
             // Using "#" prevents merging ("11" and "1|1" confusion)
             string key = "";
-            for (int count : charCountVec)
+            for (int count : freqCountVec)
                 key = key + to_string(count) + "#";
             
             // Store it in hash
-            hash[key].push_back(s); // since the second in hash is vector we use push_back
+            auto it = hash.find(key);
+
+            if (it == hash.end()) // if key not found, insert (NOTE: insert function will skip duplicate keys)
+            {
+                vector<string> temp;
+                temp.push_back(s);
+
+                hash.insert({key,temp}); // { } use pair
+            }
+            else
+            {
+                it->second.push_back(s); // since the second in hash is vector we use push_back
+            }
         }
 
-        // Move results from hash map into output 2-D vector 
+        // Step_2: Extract results from hash map into output 2-D vector 
         // (just think as, its a vector where each element inside is again a vector of string, thats it )
         vector<vector<string>> TwoDVec;
 
-        for (auto &entry : hash)
-            TwoDVec.push_back(entry.second);
+        for (auto pair : hash)
+            TwoDVec.push_back(pair.second);
 
         return TwoDVec;
     }
 };
 
-/********************************************************************************************
- * Time Complexity : O(n * m), where n is number if strings and m lengths of longest string *                                              *
- * Space Complexity: O(n), for 2-D Vector                                                    *
- ***************************************************************************/
+/******************************************
+ * Time Complexity : O(n)                 *
+ * Space Complexity: O(n), for 2-D Vector *                                                    *
+ ******************************************/
 
 /* Remarks: 
 
