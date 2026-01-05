@@ -14,17 +14,22 @@ public:
 
     Node* reverseList(Node* head) {
 
-        Node* curr = head;
+        Node* temp = head;
         Node* prev = nullptr;
+        Node* nextNode = nullptr;
 
-        // Traverse the linked list
-        while (curr != nullptr) { // Note: not (curr-> next != nullptr), it will skip checking last node
+        //Idea! = Reverse the pointer arrows in the Linked List. Job Done!
+        // Original :            1 -> 2 -> 3 -> 4-> nullptr
+        // Reversed : nullptr <- 1 <- 2 <- 3 <- 4 
 
-            Node* temp = curr->next; // save the link address before breaking
-            curr->next = prev;           // create a new reverse link
+        // Traverse the linked list, always use "temp" for traversal
+        while (temp != nullptr) // Note: not (temp->next != nullptr), then it will skip checking last node
+        { 
+            nextNode = temp->next;       // save the link address before breaking
+            temp->next = prev;           // create a new reverse link
 
-            prev = curr;                 // move the prev pointer to current
-            curr = temp;                 // move the curr pointer to next element
+            prev = temp;                 // move the prev pointer to temp node
+            temp = nextNode;             // move the temp pointer to next node
         }
 
         // At the end, prev will be the new head of the reversed list

@@ -80,7 +80,7 @@ void deleteAtPosition(Node* &head, int position)
         temp = temp->next;
     }
 
-   // NOTE: for DELETE condition is temp->next != nullptr unlike temp != nullptr in INSERT
+   // NOTE: for DELETE, condition is temp->next != nullptr unlike temp != nullptr in INSERT
    // Insertion only needs a valid current node, but deletion needs both a valid current node 
    // and a valid next node to delete.
 

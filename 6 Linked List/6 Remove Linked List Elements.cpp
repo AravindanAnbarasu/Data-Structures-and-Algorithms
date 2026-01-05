@@ -50,7 +50,7 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    
+    Remove a node by value
 */
 
 /* Question:
