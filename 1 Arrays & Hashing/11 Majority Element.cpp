@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Hash Map 
+/* Approach: Hash Map with frequency count
 */
 
 class Solution {
@@ -9,22 +9,26 @@ public:
     int majorityElement(vector<int>& nums) {
 
         unordered_map<int, int> hash;
-        int result;
+        int answer = 0;
         int maxCount = 0;
 
-        // Loop the vector and Count occurrences
+        // Loop the vector and and store the count in hash
         for (int num : nums) 
         {
-            hash[num] = hash[num] + 1; 
+            hash[num] = hash[num] + 1;
+        } 
 
-            // update the maxCount and result for each loop
-            if (hash[num] > maxCount)
+        // Loop the hash and update the answer
+        for (auto element : hash )  // element is a pair<int,int>
+        {
+            if (element.second > maxCount)
             {
-                maxCount = hash[num];
-                result = num;
+                maxCount = element.second ;   // update the maxCount
+                answer = element.first;       // update the answer that has maxCount
             }
         }
-        return result;
+
+        return answer;
     }
 };
 

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Hash Map 
+/* Approach: Hash Map with frequency count
 */
 
 class Solution {
@@ -10,12 +10,12 @@ public:
 
         unordered_map<char, int> hash;
 
-        // Step 1: Count frequency of each character in the string
+        // Count frequency of each character in the string and store it in hash
         for (char c : s) {
             hash[c]= hash[c] + 1;   // increase the count of character 'c' by 1
         }
 
-        // Step 2: Find the first character that appears only once
+        // Loop has and find the first character that appears only once
         for (int i = 0; i < s.size(); i++) {
             if (hash[s[i]] == 1) {            // check if this character occurs exactly once
                 return i;                     // return its index

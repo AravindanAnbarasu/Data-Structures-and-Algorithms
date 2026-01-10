@@ -1,44 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: String Reverse
-Time Complexity : O(n)                          
-Space Complexity: O(n)
-*/
-class Solution {
-public:
-    bool isPalindrome(string s) {
-
-        // Construct a new string with only alphanumeric characters
-        string newStr = "";
-        for (char c : s)
-        {
-            if (isalnum(c))
-            {
-                newStr = newStr + (char)tolower(c);
-            }
-        }
-
-        /* Note: We cannot use reverse here, because it reverses the original string passed to it
-         * Also we use rbegin() and not begin()
-         */
-
-        string rev_newStr(newStr.rbegin(), newStr.rend());
-
-        return newStr == rev_newStr;
-    }
-};
-
-/* Optimal Approach: Two Pointers (Left and Right Pointers)
-Time Complexity : O(n)                          
-Space Complexity: O(1)
+/* Optimal Approach: Two Pointers -> left(0) and right(size-1)
 */
 
 class Solution {
 public:
-    bool isPalindrome(const std::string& s) {
+    bool isPalindrome(const std::string& s) 
+    {
         int left = 0;
-        int right = s.length() - 1;
+        int right = s.size() - 1;
 
         while (left < right)
         {
@@ -54,7 +25,7 @@ public:
 
             /*----------------Additional checks from usual palindrome logic----------------*/
 
-            if (tolower(s[left]) != tolower(s[right])) 
+            if (tolower(s[left]) != tolower(s[right]))  // toupper() -> to convert to upper case
             {
                 return false;
             }
@@ -74,7 +45,10 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    reverse(str.rbegin(), str.rend()); reverses the original string str
+    - An string is a palindrome when it reads the same forward and backward. Eg: radar
+
+    - You can also use reverse(str.begin(), str.end()); reverses the original string str. 
+      Time: O(n) Space: O(1) 
 */
 
 /* Question:

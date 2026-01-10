@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: Two Pointers (Left(0) and Right(size-1) Pointers)
+/* Approach: Two Pointers -> left(0) and right(size-1)
 */
 
 class Solution {

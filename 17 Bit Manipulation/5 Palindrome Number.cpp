@@ -9,10 +9,10 @@ class Solution {
 public:
     bool isPalindrome(int x) {
 
-        string s = to_string(x);
-        string rev = s;
+        string s = to_string(x); // Space Complexity: O(n)
+        string rev = s;          // Space Complexity: O(n)
 
-        // Time Complexity: O(n) and Space Complexity: O(n)
+        // Time Complexity: O(n) and Space Complexity: O(1)
         reverse(rev.begin(), rev.end());
 
         return s == rev;

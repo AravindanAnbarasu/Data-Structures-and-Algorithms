@@ -22,6 +22,7 @@ int factorial(int n)
 
 /* Remarks: 
       0! = 1
+      5! = 5 * 4 * 3 * 2 * 1
 */
 
 /* Question:

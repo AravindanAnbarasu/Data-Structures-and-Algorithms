@@ -9,7 +9,7 @@ public:
     bool isAnagram(string s, string t) {
 
         // Base_case: If lengths differ, not possible to be anagrams
-        if (s.length() != t.length()) // In c++, string.size() is same as string.length() 
+        if (s.size() != t.size()) 
             return false;
 
         unordered_map<unsigned char, int> hash;
@@ -22,7 +22,7 @@ public:
             hash[c] = hash[c] - 1;  // decrement for each char found in t
         }
 
-        // Loop the hash, here element is a pair<char,int>
+        // Loop the hash, here element is a pair<unsigned char,int>
         for (auto element : hash) {
             if (element.second != 0)
                 return false;
@@ -44,9 +44,9 @@ public:
     
     2. hash[c] + 1 : You can just insert a key without a value, but the default value 
     of the datatype will be stored. In our case 0, since int. This is only applicable for hash
-    and not "Vector" where  you have to initialize before accessing.
+    and not "Vector" where you have to initialize with some size before accessing.
     
-    3. Works for entire ASCII Range of 256 characters, because unsigned char stores 0-255 values, 
+    3. Works for entire ASCII Range of 256 characters, because "unsigned char" stores 0-255 values, 
     but for array we have subtract with -'a' to get a +ve index.
     Follow-Up Q: How to adapt for UNICODE characters. For UNICODE use -> unordered_map<char32_t, int> 
 

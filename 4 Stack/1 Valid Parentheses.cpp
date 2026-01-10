@@ -7,29 +7,28 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        
-        //Base_Case: if string is empty, return false
-        if(s.length() == 0)
-            return false;
 
         stack<char> st;
 
-        for (char c : s) {
-
-            if (c == '(' || c == '{' || c == '[') // push if any open braces
+        for (char c : s) 
+        {
+            // if open braces → push
+            if (c == '(' || c == '{' || c == '[') 
             {
                 st.push(c);
             }
 
-            else // if closed bracket
-            {
-                if (st.empty())  // if the 1st bracket is a closed bracket, return false
+            // if closed bracket
+            else 
+            {   
+                //Base_case: if the 1st bracket is a closed bracket, return false
+                if (st.empty())  
                     return false;
 
                 // If matching pair → pop
-                if ((c == ')' && st.top() == '(') ||
-                    (c == '}' && st.top() == '{') ||
-                    (c == ']' && st.top() == '[')) 
+                if ( c == ')' && st.top() == '(' ||
+                     c == '}' && st.top() == '{' ||
+                     c == ']' && st.top() == '[' ) 
                 {
                     st.pop();
                 }

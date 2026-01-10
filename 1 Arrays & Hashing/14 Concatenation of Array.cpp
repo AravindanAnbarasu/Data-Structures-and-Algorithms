@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Approach: simple vector
+/* Approach: Simple vector
 */
 
 class Solution {
@@ -19,6 +19,7 @@ public:
         {
             ans.push_back(num);
         }
+
         return ans;
     }
 };
