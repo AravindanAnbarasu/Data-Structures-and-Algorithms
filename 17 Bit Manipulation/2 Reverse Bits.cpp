@@ -44,7 +44,8 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    
+    Right shift on Signed datatype -> "Preserves" the sign bit (MSB)
+    Left shift on Signed datatype -> "Do-not" Preserve the sign bit (MSB)
 */
 
 /* Question:

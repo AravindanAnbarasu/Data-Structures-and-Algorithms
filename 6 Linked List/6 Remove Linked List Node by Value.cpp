@@ -13,6 +13,7 @@ public:
         ListNode *next;
     };
 
+    // Remove node in a Linked List by "value"
     ListNode* removeElements(ListNode* head, int val) {
 
         // Create a dummy node and make (dummy.next = head) which helps to operate on head node
@@ -50,7 +51,7 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    Remove a node by value
+    Remove a node by value, unlike position in the Linked List Basic Operation problem.
 */
 
 /* Question:

@@ -13,7 +13,7 @@ int climbStairs(int n) {
     if (n <= 2)
         return n;
 
-    vector<int> dp(n + 1);   // index 0 is unused so size = n + 1, instead n
+    vector<int> dp(n + 1, 0);   // index 0 is "unused" => so size = n + 1, instead n
     
     // store the base cases
     dp[1] = 1;
@@ -31,7 +31,7 @@ int climbStairs(int n) {
 };
 
 
-/* Optimal Approach: Bottom-Up Approach (Space-Optimized)
+/* Optimal Approach: Bottom-Up Approach / Tabulation (Space-Optimized)
 Time Complexity : O(n)                        
 Space Complexity: O(1)
 */
@@ -39,7 +39,7 @@ class Solution {
 public:
     int climbStairs(int n) 
     {
-        if (n <= 2)   // Base Case
+        if (n <= 2)   // Base_Case: since each time you can either climb 1 or 2 steps
             return n;
         
         // Store the base case results
@@ -66,7 +66,10 @@ public:
  ***************************************************/
 
 /* Remarks: 
-   1. VECTOR Thumb Rule: whenever you declare a VECTOR, always initialize with (size, default value)
+    1. DP -> Don’t do the same work again and again, instead store and reuse the result, to solve 
+    the problem faster
+
+    2. VECTOR Thumb Rule: whenever you declare a VECTOR, always initialize with (size, default value)
    or (size) like an array, when you access vec[] first even before push_back. 
    As size of vector<int> vec; -> is Zero.
 */
