@@ -17,7 +17,7 @@ public:
         // Time Complexity: O(n log n) , Space Complexity: O(1)
         sort(nums.begin(), nums.end());
 
-        // Loop the array
+        // Loop the Array and fix one element nums[i]
         for (int i = 0; i < nums.size(); i++)
         {
 

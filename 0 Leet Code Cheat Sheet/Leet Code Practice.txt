@@ -1,0 +1,21 @@
+Service Company:
+
+1. Two Sum                           -> Hash Map with index
+2. Contains duplicate                -> Hash Set
+3. Valid Anagram                     -> Hash Map with frequency count
+4. First unique character in string  -> Hash Map with frequency count
+5. Majority Element                  -> Hash Map with frequency count
+6. Concatenate an Array              -> Simple Vector
+7. Factorial using Recursion         -> return n * factorial(n - 1);
+9. Reverse a String                  -> Two Pointers -> Left(0) and Right(size-1)
+10. Valid Palindrome                 -> Two Pointers -> Left(0) and Right(size-1)
+11. Valid Parenthesis                -> Stack
+12. Linked List Basic Operations     -> Linked List 
+13. Reverse a Linked List            -> Linked List 
+14. Remove Linked List Node by Value -> Linked List
+15. Middle of the Linked List 	     -> Two Pointers (Slow and Fast Pointers)/(Sliding Window)
+16. Climbing Stairs                  -> DP
+17. Number of 1 bits                 -> Bit Manipulation
+18. Reverse Bits                     -> Bit Manipulation
+19. Palindrome Number                -> convert to string and reverse it
+20. Swap two numbers without temp    -> XOR

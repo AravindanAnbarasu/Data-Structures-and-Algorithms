@@ -38,8 +38,8 @@ public:
                 stack.pop();
             }
             else
-            { // check if its a digit, only then push to stack
-                if (isdigit(op[0]))
+            {   // check if its a digit or negative sign (handle -ve numbers)
+                if (op[0] == '-' || isdigit(op[0]))
                 {
                     stack.push(stoi(op));
                     result = result + stack.top();
