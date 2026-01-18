@@ -11,8 +11,8 @@ public:
         int count  = 0;
 
         // Iterate 32 because int size is 4 bytes/32 bits
-        for (int i = 0; i < 32; i++) {
-
+        for (int i = 0; i < 32; i++) 
+        {
             // Extract each Bit and check if 1 or 0
             if( (n >> i) & 1 ) 
             {
