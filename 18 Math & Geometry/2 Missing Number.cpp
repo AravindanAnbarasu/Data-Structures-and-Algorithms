@@ -16,7 +16,7 @@ public:
         // Calculate actual sum from the array
         int actualSum = 0;
 
-        for(int num : nums)
+        for(auto num : nums)
         {
             actualSum = actualSum + num;
         }
@@ -32,7 +32,7 @@ public:
  ***************************************************/
 
 /* Remarks: 
-    
+    Formula for sum of numbers from 0 to n => n * (n + 1) / 2;
 */
 
 /* Question:
